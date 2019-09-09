@@ -31,6 +31,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button convertButtonTemp = findViewById(R.id.convertButtonTemp);
+        convertButtonTemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText ed1 = findViewById(R.id.tempFText);
+                String strInch = ed1.getText().toString();
+                double valInch = Integer.parseInt(strInch);
+
+                double valMtr =  (valInch-32)*5/9;
+                EditText ed2 = findViewById(R.id.tempCText);
+                ed2.setText(Double.toString(valMtr));
+
+            }
+        });
+
+        Button convertButtonLiq = findViewById(R.id.convertButtonLiq);
+        convertButtonLiq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText ed1 = findViewById(R.id.glText);
+                String strInch = ed1.getText().toString();
+                double valInch = Integer.parseInt(strInch);
+
+                double valMtr =  (valInch*3.78541);
+                EditText ed2 = findViewById(R.id.litText);
+                ed2.setText(Double.toString(valMtr));
+
+            }
+        });
+
     }
+
 
 }
